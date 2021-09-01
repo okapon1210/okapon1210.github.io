@@ -60,8 +60,8 @@ async function connect(e){
     }
 
     // WebSocketの作成
-    let addr = document.getElementById("wsAddress")
-    let ws = new WebSocket("ws://" + addr +":8080/ws")
+    let addr = document.getElementById("address")
+    let ws = new WebSocket("ws://" + addr +"/ws")
 
     // WebSocketが接続できた時のハンドラ
     // WebSocketの接続を確認してからメッセージを送信する
@@ -161,6 +161,7 @@ async function dispRoom(){
 
 // サーバに部屋一覧を問い合わせて結果をJsonで返す
 async function getRoomList(){
-    let response = await fetch('./list')
+    let addr = document.getElementById("address")
+    let response = await fetch("https://"+addr+'/list')
     return response.json()
 }
