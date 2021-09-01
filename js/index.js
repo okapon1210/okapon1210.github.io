@@ -162,6 +162,6 @@ async function dispRoom() {
 // サーバに部屋一覧を問い合わせて結果をJsonで返す
 async function getRoomList() {
     let addr = document.getElementById("address")
-    let response = await fetch("https://" + addr.value + '/list')
+    let response = await fetch("http://" + addr.value + '/list')
     return response.json()
 }
