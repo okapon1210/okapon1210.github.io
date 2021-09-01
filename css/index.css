@@ -1,0 +1,11 @@
+.roomRow{
+    border: solid;
+    display: block;
+    margin: 10px auto;
+    padding: 5px
+}
+
+.remoteVideo{
+    max-width: 320px;
+    max-height: 240px;
+}

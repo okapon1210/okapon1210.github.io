@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="manifest.json">
     <meta charset="UTF-8">
-    <title>pwa</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+    <link rel="stylesheet" type="text/css" href="/src/css/index.css">
 </head>
 <body>
- <video autoplay playsinline></video>
+    <label>Server Address<input type="text" id="wsAddress"></label>
+    <h3>Local Video</h3>
+    <div>
+        <video id="localVideo" width="320" height="240" autoplay muted></video><br>
+    </div>
+
+    <h3>Remote Video</h3>
+    <div id="remoteVideos"></div><br>
+
+    <h1>list</h1>
+    <button id="createButton" value="">作成</button>
+    <button id="closeButton">切断</button>
+    <button id="refresh">部屋一覧更新</button>
+    <div id="roomlist">
+    </div>
+    
 </body>
-<script src="js/camera.js"></script>
-<script>
-    if('serviceWorker' in navigator){
-        navigator.serviceWorker.register('sw.js').then(function (registration){
-            console.log('ServiceWorker registration successful with scope: ', registration.scope);
-        }).catch(function (err){
-            console.log('ServiceWorker registration failed: ', err);
-        });
-    }
-</script>
+<script type="text/javascript" src="/src/js/index.js"></script>
 </html>
